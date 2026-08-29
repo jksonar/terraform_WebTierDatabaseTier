@@ -1,0 +1,10 @@
+prefix                  = "webdb"
+location                = "eastus"
+vm_count                = 2
+vm_size                 = "Standard_B1s"
+allowed_ssh_source_cidr = "0.0.0.0/0" # restrict this to your IP/CIDR
+db_engine               = "postgresql" # or "mysql"
+db_sku_name             = "B_Standard_B1ms"
+db_storage_mb           = 32768
+db_admin_username       = "dbadmin"
+db_name                 = "appdb"

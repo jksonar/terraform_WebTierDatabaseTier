@@ -1,0 +1,60 @@
+Architecture 3 — Web Tier + Database Tier
+
+Difficulty: ⭐⭐⭐
+
+This is the architecture I'd recommend you build next.
+
+                         Internet
+                            |
+                            v
+                  +------------------+
+                  | Public Load      |
+                  | Balancer         |
+                  +------------------+
+                            |
+                            v
+              +---------------------------+
+              |        Web Subnet         |
+              |                           |
+              |  +------+     +------+   |
+              |  | VM 1 |     | VM 2 |   |
+              |  +------+     +------+   |
+              |                           |
+              +---------------------------+
+                            |
+                            |
+              +---------------------------+
+              |       DB Subnet           |
+              |                           |
+              |    +----------------+    |
+              |    | Azure MySQL /   |    |
+              |    | PostgreSQL      |    |
+              |    +----------------+    |
+              |                           |
+              +---------------------------+
+Resources
+Resource Group
+    |
+    +-- VNet
+    |
+    +-- Web Subnet
+    |      |
+    |      +-- NSG
+    |      +-- VM
+    |      +-- VM
+    |
+    +-- DB Subnet
+           |
+           +-- NSG
+           +-- MySQL/PostgreSQL
+Practice
+Public Load Balancer
+Backend pool
+Health probe
+Load balancing rule
+Multiple Linux VMs
+NSGs
+Database
+Private networking
+
+This starts teaching you real application architecture, rather than just individual Terraform resources.

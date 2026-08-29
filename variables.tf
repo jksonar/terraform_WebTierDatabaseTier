@@ -5,9 +5,9 @@ variable "prefix" {
 }
 
 variable "location" {
-  description = "Azure region to deploy into."
+  description = "Azure region to deploy into. centralus is used by default because it is one of the few regions where this subscription has PostgreSQL Flexible Server capability and open (non-restricted) VM SKUs."
   type        = string
-  default     = "eastus"
+  default     = "centralus"
 }
 
 variable "vnet_address_space" {
@@ -35,9 +35,9 @@ variable "vm_count" {
 }
 
 variable "vm_size" {
-  description = "VM size for the web tier."
+  description = "VM size for the web tier. Standard_B1s/B-series and D-series-v3 are blocked subscription-wide on this Free Subscription (NotAvailableForSubscription), so a newer-generation size that is actually open is used instead."
   type        = string
-  default     = "Standard_B1s"
+  default     = "Standard_D2als_v7"
 }
 
 variable "admin_username" {

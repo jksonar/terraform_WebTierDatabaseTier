@@ -1,7 +1,7 @@
 prefix                  = "webdb"
-location                = "eastus"
+location                = "centralus" # eastus has no PostgreSQL Flexible Server capability on this subscription
 vm_count                = 2
-vm_size                 = "Standard_B1s"
+vm_size                 = "Standard_D2als_v7" # Standard_B1s/B-series is NotAvailableForSubscription on this Free Subscription
 allowed_ssh_source_cidr = "0.0.0.0/0" # restrict this to your IP/CIDR
 db_engine               = "postgresql" # or "mysql"
 db_sku_name             = "B_Standard_B1ms"
